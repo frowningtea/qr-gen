@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2020.1.114/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2020.1.114/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2020.1.114/styles/kendo.default.mobile.min.css" />
+
+    <script src="http://kendo.cdn.telerik.com/2020.1.114/js/jquery.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2020.1.114/js/kendo.all.min.js"></script>
+    
+
+</head>
+<body>
+        <div id="example" class="k-content" style="text-align:center;">
+            <div class="qr-wrapper">       
+				<h3>QR code from URL</h3>
+				<label for="url">URL: </label>
+				<input type="text" ID="url" />&nbsp;
+				<input type="button" onclick="setQR();" value="Generate"/>
+				<br />
+                <div class="demo-section">
+                    <div id="qrUrl"></div>
+                </div>
+
+            </div>
+
+            <script type="text/javascript">
+                /*$(document).ready(function () {
+                    setQR();
+                });
+				*/
+				
+				function setQR() {
+					$("#qrUrl").kendoQRCode({
+                        value: $("#url").val(),
+                        errorCorrection: "M",
+                        size: 120,
+                        border: {
+                            color: "#000000",
+                            width: 5
+                        }
+                    });
+				}
+            </script>
+
+            <style>
+                .demo-section {
+                    display: inline-block;
+                    margin: 15px 30px 15px 0;
+                }
+                .k-qrcode {
+                    display:inline-block;
+                    margin: 10px 0 0;
+                    border: none;
+                }
+            </style>
+        </div>
+
+
+</body>
+</html>
